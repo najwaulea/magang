@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Go2Intern Login</title>
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      background-color: #ffffff;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 400px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .login-container img {
+      display: block;
+      margin: 0 auto 10px auto;
+      width: 150px;
+    }
+
+    .form-header h4 {
+      color: #4c2c5e;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      text-align: left;
+    }
+
+    .form-header p {
+      font-size: 12px;
+      color: #000;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      background-color: #c7bccb;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .input-group i {
+      padding: 13px;
+      color: #000;
+      font-size: 16px;
+      background-color: #c7bccb;
+      min-width: 45px;
+      text-align: center;
+    }
+
+    .form-control {
+      background-color: transparent;
+      border: none;
+      padding: 13px 14px;
+      width: 100%;
+    }
+
+    .btn-login {
+      background-color: #5a4b68;
+      color: #5a4b68;
+      border-radius: 12px;
+      padding: 12px;
+      width: 100%;
+      margin-top: 10px;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      border: none;
+    }
+    
+    .btn-login a{
+      color: white;
+      text-decoration: none;
+      display: block;
+    }
+
+    .signup-text {
+      margin-top: 20px;
+      font-size: 12px;
+      text-align: center;
+      color: #a49aab;
+    }
+
+    .signup-text a {
+      font-weight: bold;
+      color: #4c2c5e;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-container">
+  <img src="img/logo.png" alt="Go2Intern Logo">
+
+  <div class="form-header">
+    <h4>Login</h4>
+    <p>Please Sign in to continue</p>
+  </div>
+
+  <form>
+    <div class="form-group">
+      <div class="input-group">
+        <i class="fa-solid fa-user"></i>
+        <input type="email" class="form-control" placeholder="Email Address">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="input-group">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" class="form-control" placeholder="Password">
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-login"><a href="home.html">Sign in</a></button>
+  </form>
+  
+  <p class="signup-text">Don't have account? <a href="register.html">Sign Up</a></p>
+</div>
+
+</body>
+</html>

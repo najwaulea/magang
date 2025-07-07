@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Explore</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      padding-bottom: 80px;
+    }
+
+    .top-bar {
+      padding: 12px 16px;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .top-bar i {
+      font-size: 20px;
+      color: #8c5ba9;
+      cursor: pointer;
+    }
+
+    .top-bar span {
+      flex-grow: 1;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: #6e4b8f;
+    }
+
+    .container {
+      padding: 0 16px;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background-color: #f5f1f9;
+      border-radius: 25px;
+      padding: 10px 15px;
+      margin: 16px 0;
+    }
+
+    .search-box i {
+      color: #34215e;
+    }
+
+    .search-box input {
+      border: none;
+      background: transparent;
+      outline: none;
+      flex: 1;
+      margin: 0 10px;
+      font-size: 14px;
+    }
+
+    .filter-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      gap: 10px;
+    }
+
+    .filter-buttons button {
+      flex: 1;
+      border: none;
+      border-radius: 12px;
+      padding: 8px 0;
+      font-size: 14px;
+      font-weight: bold;
+      color: #6e4b8f;
+      background: linear-gradient(to right, #c2b0d1, #eee9f2);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .featured {
+      position: relative;
+      background-color: #f1e2b8;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .featured.it-support {
+      background-color: #d6c0bb;
+      margin-top: 20px;
+    }
+
+    .featured .content {
+      flex: 1 1 50%;
+    }
+
+    .featured img {
+      flex: 1 1 40%;
+      max-width: 140px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .featured h4 {
+      font-weight: bold;
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .featured span {
+      font-size: 13px;
+      color: #555;
+    }
+
+    .apply-btn {
+      margin-top: 10px;
+      background-color: #6e4b8f;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: none;
+      font-size: 13px;
+    }
+
+    .content-heart {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: white;
+      background-color: rgba(213, 202, 202, 0.3);
+      padding: 6px;
+      border-radius: 50%;
+    }
+
+    .course-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: space-between;
+    }
+
+    .course-card {
+      flex: 1 1 48%;
+      background-color: #f4e3c3;
+      border-radius: 12px;
+      padding: 10px;
+      position: relative;
+      text-align: center;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .course-card:nth-child(2) {
+      background-color: #d0e4dc;
+    }
+
+    .course-card img {
+      width: 100%;
+      height: 90px;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+
+    .course-card h5 {
+      font-size: 14px;
+      font-weight: bold;
+      margin: 4px 0 2px;
+    }
+
+    .course-card span {
+      font-size: 12px;
+      color: #333;
+    }
+
+    .play-button {
+      margin-top: 8px;
+    }
+
+    .play-button i {
+      font-size: 18px;
+      background: white;
+      color: #ebe9ed;
+      border-radius: 50%;
+      padding: 8px;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: #5a4b68;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 22px;
+      z-index: 100;
+    }
+
+    .bottom-nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .bottom-nav a:hover,
+    .bottom-nav a.active {
+      color: #ddd;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <a href="home.html"><i class="fa-solid fa-chevron-left"></i></a>
+    <span>Explore</span>
+    <i class="fa-solid fa-filter"></i>
+  </div>
+
+
+  <div class="container">
+
+    <!-- Search -->
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search . . .">
+      <i class="fa-solid fa-microphone"></i>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="filter-buttons">
+      <button>Trending</button>
+      <button>Popular</button>
+      <button>Most Viewed</button>
+    </div>
+
+    <!-- Featured UI/UX -->
+    <div class="featured">
+      <i class="fa-regular fa-heart content-heart"></i>
+      <div class="content">
+        <h4>UI/UX Designer</h4>
+        <span>30 courses</span><br>
+        <button class="apply-btn">Apply <i class="fa-solid fa-right-to-bracket"></i></button>
+      </div>
+      <img src="img/uiux_designer.png" alt="UI/UX Designer">
+    </div>
+
+    <!-- Course Grid -->
+    <div class="course-grid">
+      <div class="course-card">
+        <i class="fa-regular fa-heart content-heart"></i>
+        <img src="img/data_analyst.PNG" alt="Data Analyst">
+        <h5>Data Analyst</h5>
+        <span>15 courses</span>
+        <div class="play-button">
+          <i class="fa-solid fa-play"></i>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <i class="fa-regular fa-heart content-heart"></i>
+        <img src="img/mobile_developer.png" alt="Mobile Developer">
+        <h5>Mobile Developer</h5>
+        <span>17 courses</span>
+        <div class="play-button">
+          <i class="fa-solid fa-play"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured IT Support -->
+    <div class="featured it-support">
+      <i class="fa-regular fa-heart content-heart"></i>
+      <div class="content">
+        <h4>IT Support</h4>
+        <span>11 courses</span><br>
+        <button class="apply-btn">Apply <i class="fa-solid fa-right-to-bracket"></i></button>
+      </div>
+      <img src="img/it_support.png" alt="IT Support">
+    </div>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav">
+    <a href="home.html"><i class="fa-solid fa-house"></i></a>
+    <a href="explore.html" class="active"><i class="fa-solid fa-magnifying-glass"></i></a>
+    <a href="saved.html"><i class="fa-solid fa-heart"></i></a>
+    <a href="profile.html"><i class="fa-solid fa-user"></i></a>
+  </div>
+
+</body>
+</html>

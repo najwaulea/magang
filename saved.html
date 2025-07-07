@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Saved</title>
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      padding-bottom: 70px;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+    }
+
+    .top-bar {
+      padding: 12px 16px;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #eee;
+    }
+
+    .top-bar .title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #8c5ba9;
+    }
+
+    .top-bar i {
+      font-size: 20px;
+      color: #8c5ba9;
+      cursor: pointer;
+    }
+
+    .container {
+      padding: 15px;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      margin: 16px 0;
+      padding: 10px 16px;
+      background: linear-gradient(to right, #f5f1f9, #f5f1f9);
+      border-radius: 12px;
+      box-shadow: 0px 2px 5px rgba(0,0,0,0.08);
+    }
+
+    .search-bar i {
+      font-size: 16px;
+      color: #4c2c5e;
+      margin-right: 8px;
+    }
+
+    .search-bar input {
+      border: none;
+      outline: none;
+      font-size: 14px;
+      background: transparent;
+      color: #4c2c5e;
+      width: 100%;
+    }
+
+    .card-list .card-item {
+      background-color: #f8f8f8;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      box-shadow: 2px 4px 10px rgba(0,0,0,0.05);
+      position: relative;
+    }
+
+    .card-left {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .card-left img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      margin-right: 12px;
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-content .job-title {
+      font-size: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .card-content .company-loc {
+      font-size: 12px;
+      color: #666;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card-content .company-loc i {
+      color: #666;
+      font-size: 12px;
+    }
+
+    .card-content .meta-info {
+      font-size: 12px;
+      color: #888;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .card-content .meta-info span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .card-content .meta-info i {
+      font-size: 12px;
+      color: #888;
+    }
+
+    .card-right {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+    }
+
+    .card-right a {
+      font-size: 10px;
+      color: #8c5ba9;
+      text-decoration: none;
+      font-weight: normal;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: #5a4b68;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 22px;
+      z-index: 100;
+    }
+
+    .bottom-nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .bottom-nav a:hover {
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <a href="home.html"><span><i class="fa-solid fa-chevron-left"></i></span></a>
+    <div class="title">Saved</div>
+    <i class="fa-solid fa-filter"></i>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="container">
+    <div class="search-bar">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search . . .">
+    </div>
+
+    <!-- Card List -->
+    <div class="card-list">
+      <div class="card-item">
+        <div class="card-left">
+          <img src="img/infokes.png" alt="PT Infokes">
+          <div class="card-content">
+            <div class="job-title">Network Administrator</div>
+            <div class="company-loc"><i class="fa-solid fa-building"></i> PT Infokes Indonesia</div>
+            <div class="meta-info">
+              <span><i class="fa-solid fa-location-dot"></i> Bandung</span>
+              <span><i class="fa-regular fa-clock"></i> 11 Day Left</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-right">
+          <a href="#">View details &gt;</a>
+        </div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-left">
+          <img src="img/astra.png" alt="PT Astra">
+          <div class="card-content">
+            <div class="job-title">Security Analyst</div>
+            <div class="company-loc"><i class="fa-solid fa-building"></i> PT Astra International Tbk</div>
+            <div class="meta-info">
+              <span><i class="fa-solid fa-location-dot"></i> Jakarta</span>
+              <span><i class="fa-regular fa-clock"></i> 13 Day Left</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-right">
+          <a href="#">View details &gt;</a>
+        </div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-left">
+          <img src="img/badr.png" alt="PT Badr Interactive">
+          <div class="card-content">
+            <div class="job-title">Desaining UI/UX</div>
+            <div class="company-loc"><i class="fa-solid fa-building"></i> PT Badr Interactive</div>
+            <div class="meta-info">
+              <span><i class="fa-solid fa-location-dot"></i> Depok</span>
+              <span><i class="fa-regular fa-clock"></i> 16 Day Left</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-right">
+          <a href="#">View details &gt;</a>
+        </div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-left">
+          <img src="img/harnods.png" alt="PT Harnods">
+          <div class="card-content">
+            <div class="job-title">Desaining UI/UX</div>
+            <div class="company-loc"><i class="fa-solid fa-building"></i> PT Harnods</div>
+            <div class="meta-info">
+              <span><i class="fa-solid fa-location-dot"></i> Jakarta</span>
+              <span><i class="fa-regular fa-clock"></i> 21 Day Left</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-right">
+          <a href="#">View details &gt;</a>
+        </div>
+      </div>
+
+      <div class="card-item">
+        <div class="card-left">
+          <img src="img/mitech.png" alt="PT Mandiri International Tech">
+          <div class="card-content">
+            <div class="job-title">Database Administrator</div>
+            <div class="company-loc"><i class="fa-solid fa-building"></i> PT Mandiri International Technology</div>
+            <div class="meta-info">
+              <span><i class="fa-solid fa-location-dot"></i> Jakarta</span>
+              <span><i class="fa-regular fa-clock"></i> 28 Day Left</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-right">
+          <a href="#">View details &gt;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav">
+    <a href="home.html"><i class="fa-solid fa-house"></i></a>
+    <a href="explore.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+    <a href="saved.html"><i class="fa-solid fa-heart"></i></a>
+    <a href="profile.html"><i class="fa-solid fa-user"></i></a>
+  </div>
+</body>
+</html>

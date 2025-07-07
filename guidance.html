@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Guidance</title>
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding-bottom: 70px;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+    }
+
+    .top-bar {
+      padding: 12px 16px;
+      font-weight: bold;
+      color: #8c5ba9;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #eee;
+    }
+
+    .top-bar span {
+      font-size: 16px;
+    }
+
+    .top-bar span:nth-child(2) {
+      flex-grow: 1;
+      text-align: center;
+      font-size: 18px;
+      color: #8c5ba9;
+    }
+
+    .container {
+      padding: 15px;
+    }
+
+    .project-box {
+      background: #f3f3f3;
+      border-radius: 12px;
+      padding: 12px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .lecturer-section {
+      margin-top: 15px;
+      font-size: 13px;
+    }
+
+    .lecturer-profile {
+      display: flex;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    .lecturer-profile img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .progress-section {
+      margin-top: 15px;
+    }
+
+    .progress {
+      height: 8px;
+      border-radius: 10px;
+      background-color: #ddd;
+      margin-bottom: 5px;
+    }
+
+    .progress-bar {
+      background-color: #81e7f8;
+      width: 50%; /* 4/8 */
+      height: 100%;
+      border-radius: 10px;
+    }
+
+    .progress-count {
+      text-align: right;
+      font-size: 12px;
+      color: #444;
+    }
+
+    .btn-menu {
+      width: 100%;
+      background: linear-gradient(to right, #f4f3f6, #f7f6f8);
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      color: #333;
+      box-shadow: 1px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      height: 60px;
+      background: #5a4b68;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 22px;
+      z-index: 100;
+    }
+    .bottom-nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .bottom-nav a:hover {
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <a href="home.html"><span><i class="fa-solid fa-chevron-left"></i></span></a>
+  <span>Guidance</span>
+  <span><i class="fa-solid fa-filter"></i></span>
+</div>
+
+<!-- Content -->
+<div class="container">
+  <div class="project-box">
+    Mobile App Development for Internal Communication at PT Connecta System
+  </div>
+
+  <!-- Lecturer Info -->
+  <div class="lecturer-section">
+    <p>Guided by lecturers:</p>
+    <div class="lecturer-profile">
+      <img src="img/pp.png" alt="Lecturer">
+      <span>Firman Asharudin, S.Kom., M.Kom</span>
+    </div>
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="progress-section">
+    <p>Progress</p>
+    <div class="progress">
+      <div class="progress-bar" style="width: 50%;"></div>
+    </div>
+    <div class="progress-count">4/8</div>
+  </div>
+
+  <!-- Menu Buttons -->
+  <button class="btn-menu">Notes <i class="fa-solid fa-chevron-right"></i></button>
+  <button class="btn-menu">Guidance schedule <i class="fa-solid fa-chevron-right"></i></button>
+  <button class="btn-menu">Send Report <i class="fa-solid fa-chevron-right"></i></button>
+</div>
+
+<!-- Bottom Navigation -->
+<div class="bottom-nav">
+  <a href="home.html"><i class="fa-solid fa-house"></i></a>
+  <a href="explore.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+  <a href="saved.html"><i class="fa-solid fa-heart"></i></a>
+  <a href="profile.html"><i class="fa-solid fa-user"></i></a>
+</div>
+
+</body>
+</html>

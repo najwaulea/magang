@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Certificate Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #ffffff;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding-bottom: 80px;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .top-bar span {
+      font-size: 18px;
+      font-weight: bold;
+      color: #8c5ba9;
+    }
+
+    .certificate-box {
+      background-color: #f9f9f9;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .certificate-img {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .action-wrapper {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .btn-block-custom {
+      width: 90%;
+      max-width: 340px;
+      margin: 10px auto;
+      padding: 10px 20px;
+      background: linear-gradient(to right, #e8e6eb, #f7f6f9);
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      font-weight: bold;
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .btn-block-custom span {
+      display: flex;
+      align-items: center;
+    }
+
+    .btn-icon {
+      margin-right: 8px;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      height: 60px;
+      background: #5a4b68;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 22px;
+      z-index: 100;
+    }
+
+    .bottom-nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .bottom-nav a:hover {
+      color: #ddd;
+    }
+
+    @media (max-width: 400px) {
+      .certificate-img {
+        max-width: 100%;
+      }
+    }
+
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+
+      .certificate-box, .certificate-box * {
+        visibility: visible;
+      }
+
+      .certificate-box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+        padding: 0;
+        background: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <a href="home.html"><span><i class="fa-solid fa-chevron-left"></i></span></a>
+    <span>Certificate</span>
+    <span><i class="fa-solid fa-filter"></i></span>
+  </div>
+
+  <!-- Certificate Display -->
+  <div class="certificate-box">
+    <img id="certificateImage" src="img/certificate.png" alt="Certificate" class="certificate-img">
+  </div>
+
+  <!-- Buttons -->
+  <div class="action-wrapper">
+    <button class="btn btn-block-custom" onclick="window.print()">
+      <span><i class="fa-solid fa-print btn-icon"></i> Print</span>
+    </button>
+
+    <button class="btn btn-block-custom" onclick="saveCertificate()">
+      <span><i class="fa-solid fa-download btn-icon"></i> Save</span>
+    </button>
+
+    <button class="btn btn-block-custom" onclick="shareCertificate()">
+      <span><i class="fa-solid fa-share btn-icon"></i> Share</span>
+    </button>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav">
+    <a href="home.html"><i class="fa-solid fa-house"></i></a>
+    <a href="explore.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+    <a href="saved.html"><i class="fa-solid fa-heart"></i></a>
+    <a href="profile.html"><i class="fa-solid fa-user"></i></a>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    function shareCertificate() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'My Internship Certificate',
+          text: 'Check out my certificate of internship!',
+          url: window.location.href
+        })
+        .then(() => console.log('Shared successfully'))
+        .catch(error => console.error('Share failed', error));
+      } else {
+        alert('Web Share not supported on this browser.');
+      }
+    }
+
+    function saveCertificate() {
+      const image = document.getElementById('certificateImage');
+      const link = document.createElement('a');
+      link.href = image.src;
+      link.download = 'certificate.png';
+      link.click();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Applied Internship</title>
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #ffffff;
+      font-family: Arial, sans-serif;
+      padding-bottom: 70px;
+      margin: 0;
+    }
+    
+    .top-bar {
+      padding: 12px 16px;
+      font-weight: bold;
+      color: #8c5ba9;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #eee;
+    }
+
+    .top-bar span {
+      font-size: 16px;
+    }
+
+    .top-bar span:nth-child(2) {
+      flex-grow: 1;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .top-bar i {
+      font-size: 16px;
+    }
+
+    .container {
+      padding: 0 16px;
+      margin-top: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0 auto;
+      background-color: #fdfdfd;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      text-align: center;
+      vertical-align: middle;
+      padding: 12px 8px;
+      font-size: 13px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    th.company, td.company {
+      white-space: normal;   
+      text-align: center;    
+      vertical-align: middle;
+    }
+
+    th {
+      background-color: #D9D9D9;
+      font-weight: bold;
+      color: #5a4b68;
+    }
+
+    td {
+      color: #333;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .btn-see-more {
+      border-radius: 8px;
+      background-color: #fff;
+      color: #6b3d77;
+      border: 1px solid #6b3d77;
+      padding: 5px 12px;
+      font-size: 12px;
+      white-space: nowrap;
+      box-shadow: 1px 2px 4px rgba(0,0,0,0.15);
+    }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      height: 60px;
+      background: #5a4b68;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 22px;
+      z-index: 100;
+    }
+
+    .bottom-nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .bottom-nav a:hover {
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <a href="home.html"><span><i class="fa-solid fa-chevron-left"></i></span></a>
+  <span>Applied Internship</span>
+  <span><i class="fa-solid fa-filter"></i></span>
+</div>
+
+<!-- Table Content -->
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th class="company">Company</th>
+        <th>Date</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td class="company">PT Ecart Webportal Indonesia</td>
+        <td>May 1, 2025</td>
+        <td><button class="btn btn-see-more">Applied ></button></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td class="company">PT Shopee Internasional Indonesia</td>
+        <td>May 2, 2025</td>
+        <td><button class="btn btn-see-more">Applied ></button></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td class="company">PT Harnods</td>
+        <td>May 3, 2025</td>
+        <td><button class="btn btn-see-more">Applied ></button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Bottom Navigation -->
+<div class="bottom-nav">
+  <a href="home.html"><i class="fa-solid fa-house"></i></a>
+  <a href="explore.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+  <a href="saved.html"><i class="fa-solid fa-heart"></i></a>
+  <a href="profile.html"><i class="fa-solid fa-user"></i></a>
+</div>
+
+</body>
+</html>

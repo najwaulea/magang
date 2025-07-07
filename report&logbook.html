@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Report & Log Book</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      padding-bottom: 70px;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+    }
+
+    .top-bar {
+      padding: 12px 16px;
+      font-weight: bold;
+      color: #8c5ba9;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #eee;
+    }
+
+    .top-bar span:nth-child(2) {
+      flex-grow: 1;
+      text-align: center;
+      font-size: 18px;
+      color: #8c5ba9;
+    }
+
+    .container {
+      padding: 15px;
+    }
+
+    .upload-section {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .upload-btn {
+      background-color: #e4d5f4;
+      border: 1px solid #bfa8d2;
+      border-radius: 12px;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #5a4b68;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .upload-btn input {
+      display: none;
+    }
+
+    .results-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #5a4b68;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .card {
+      background-color: #f6f6f6;
+      border-radius: 14px;
+      border: 1px solid #bfa8d2;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-title {
+      background-color: #ddd;
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .view-link {
+      color: #6b3d77;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .delete-btn {
+      background: none;
+      border: none;
+      color: #a00;
+      font-size: 16px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: #5a4b68;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 22px;
+      z-index: 100;
+    }
+
+    .bottom-nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .bottom-nav a:hover {
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <a href="home.html"><span><i class="fa-solid fa-chevron-left"></i></span></a>
+    <span>Report & Log Book</span>
+    <span><i class="fa-solid fa-filter"></i></span>
+  </div>
+
+  <div class="container">
+    <!-- Upload -->
+    <div class="upload-section">
+      <label class="upload-btn">
+        <i class="fa-solid fa-upload"></i> Upload Report & Logbook
+        <input type="file" accept=".pdf,.doc,.docx" onchange="handleUpload(this)">
+      </label>
+    </div>
+
+    <!-- Results Toggle -->
+    <div class="results-header" onclick="toggleResults()">
+      <span>Results</span>
+      <i class="fa-solid fa-chevron-down" id="chevronIcon"></i>
+    </div>
+
+    <!-- Upload Cards -->
+    <div id="uploadResult"></div>
+  </div>
+
+  <!-- Bottom Nav -->
+  <div class="bottom-nav">
+    <a href="home.html"><i class="fa-solid fa-house"></i></a>
+    <a href="explore.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+    <a href="saved.html"><i class="fa-solid fa-heart"></i></a>
+    <a href="profile.html"><i class="fa-solid fa-user"></i></a>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    const uploadContainer = document.getElementById('uploadResult');
+    const chevron = document.getElementById('chevronIcon');
+
+    // Load data on page load
+    const uploads = JSON.parse(localStorage.getItem('uploads') || '[]');
+    renderUploads();
+
+    function handleUpload(input) {
+      if (!input.files.length) return;
+      const file = input.files[0];
+      const now = new Date();
+      const dateStr = now.toLocaleDateString();
+
+      const uploadData = { name: file.name, date: dateStr };
+      uploads.unshift(uploadData); // add to beginning
+      localStorage.setItem('uploads', JSON.stringify(uploads));
+      renderUploads();
+    }
+
+    function renderUploads() {
+      uploadContainer.innerHTML = '';
+      uploads.forEach((upload, index) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <div class="card-title">${upload.name}</div>
+          <div class="card-footer">
+            <span>${upload.date}</span>
+            <div>
+              <a href="#" class="view-link">View details ></a>
+              <button class="delete-btn" onclick="deleteUpload(${index})" title="Delete"><i class="fa-solid fa-trash"></i></button>
+            </div>
+          </div>
+        `;
+        uploadContainer.appendChild(card);
+      });
+    }
+
+    function deleteUpload(index) {
+      if (confirm("Delete this upload?")) {
+        uploads.splice(index, 1);
+        localStorage.setItem('uploads', JSON.stringify(uploads));
+        renderUploads();
+      }
+    }
+
+    function toggleResults() {
+      const isHidden = uploadContainer.style.display === 'none';
+      uploadContainer.style.display = isHidden ? 'block' : 'none';
+      chevron.className = isHidden ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up';
+    }
+  </script>
+</body>
+</html>
